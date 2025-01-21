@@ -17,6 +17,7 @@ import { isFunction } from 'rxjs/internal/util/isFunction';
 
 import { Plan } from './plan';
 import { PlansResponse } from './plans-response';
+
 export function fakePlan(modifier?: Partial<Plan> | ((baseSubscription: Plan) => Plan)): Plan {
   const base: Plan = {
     id: '5ac5ca94-160f-4acd-85ca-94160fcacd7d',
