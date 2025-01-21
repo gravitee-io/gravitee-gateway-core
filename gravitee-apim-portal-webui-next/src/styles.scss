@@ -23,7 +23,8 @@
 @use '@angular/material-experimental' as matx;
 @use './scss/theme';
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 @include mat.color-variants-backwards-compatibility(theme.$light-theme);
 
 html {
