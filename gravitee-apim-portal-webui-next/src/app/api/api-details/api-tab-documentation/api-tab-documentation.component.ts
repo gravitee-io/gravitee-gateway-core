@@ -32,7 +32,6 @@ interface SelectedPageData {
 
 @Component({
   selector: 'app-api-tab-documentation',
-  standalone: true,
   imports: [PageTreeComponent, AsyncPipe, PageComponent, RouterModule, LoaderComponent],
   templateUrl: './api-tab-documentation.component.html',
   styleUrl: './api-tab-documentation.component.scss',

@@ -36,7 +36,6 @@ interface LogVM extends Log {
 
 @Component({
   selector: 'app-application-log',
-  standalone: true,
   imports: [AsyncPipe, LoaderComponent, MatExpansionModule, MatCard, MatCardContent, MatIcon, RouterLink, DatePipe, CopyCodeComponent],
   templateUrl: './application-log.component.html',
   styleUrl: './application-log.component.scss',
