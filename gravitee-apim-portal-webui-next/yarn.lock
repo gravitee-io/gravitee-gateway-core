@@ -29,37 +29,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-builders/common@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@angular-builders/common@npm:2.0.0"
+"@angular-builders/common@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@angular-builders/common@npm:3.0.0"
   dependencies:
-    "@angular-devkit/core": "npm:^18.0.0"
+    "@angular-devkit/core": "npm:^19.0.0"
     ts-node: "npm:^10.0.0"
     tsconfig-paths: "npm:^4.1.0"
-  checksum: 10c0/bbcf9cac32d6c542106085a06d762a8c7c221b199fe1959cd4f4fdbfcba53162519964ff93049e15b1b25764a61d4ba23acc175055b9e84b424e1ab20955a7c4
+  checksum: 10c0/e51d4acd00fcb0bb423c6e9c9d129bc673a32e12e789146f2d2bd62fde411e17c4d379e97aca3f1f53704548b7ffa2293c4423f21d67c409831370c69dcf0819
   languageName: node
   linkType: hard
 
-"@angular-builders/jest@npm:18.0.0":
-  version: 18.0.0
-  resolution: "@angular-builders/jest@npm:18.0.0"
+"@angular-builders/jest@npm:19.0.0":
+  version: 19.0.0
+  resolution: "@angular-builders/jest@npm:19.0.0"
   dependencies:
-    "@angular-builders/common": "npm:2.0.0"
-    "@angular-devkit/architect": "npm:>=0.1800.0 < 0.1900.0"
-    "@angular-devkit/core": "npm:^18.0.0"
-    jest-preset-angular: "npm:14.1.0"
+    "@angular-builders/common": "npm:3.0.0"
+    "@angular-devkit/architect": "npm:>=0.1900.0 < 0.2000.0"
+    "@angular-devkit/core": "npm:^19.0.0"
+    jest-preset-angular: "npm:14.4.2"
     lodash: "npm:^4.17.15"
   peerDependencies:
-    "@angular-devkit/build-angular": ^18.0.0
-    "@angular/compiler-cli": ^18.0.0
-    "@angular/core": ^18.0.0
-    "@angular/platform-browser-dynamic": ^18.0.0
+    "@angular-devkit/build-angular": ^19.0.0
+    "@angular/compiler-cli": ^19.0.0
+    "@angular/core": ^19.0.0
+    "@angular/platform-browser-dynamic": ^19.0.0
     jest: ">=29"
-  checksum: 10c0/dfc41e2f4898c9f1e27968c964e4657efaa4e7b8962db1849f05e15569735e41af4d3b744bbc534784bd15afaf2e3d7b8224ef6e56e2f95a1fc2cc96ae6f5020
+  checksum: 10c0/d17e9cff9708da2c654f81ad2c6f9185c30c3168673a3d9135ffb193f0f7f36e710c895d2de433b874154dbe9ff0912cdf5a89904ecaed94d30acb895c2ec20c
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:0.1802.12, @angular-devkit/architect@npm:>= 0.1800.0 < 0.1900.0, @angular-devkit/architect@npm:>=0.1800.0 < 0.1900.0":
+"@angular-devkit/architect@npm:0.1802.12, @angular-devkit/architect@npm:>= 0.1800.0 < 0.1900.0":
   version: 0.1802.12
   resolution: "@angular-devkit/architect@npm:0.1802.12"
   dependencies:
@@ -71,6 +71,16 @@ __metadata:
     puppeteer:
       built: true
   checksum: 10c0/2188b8ed681c2a76ebb60addb6b68a8c38c581c552fcc1a077829e9317f192d87c8173e503be96818cd11966bc64d92c1c306a40754deaba4005e5e0736add1f
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/architect@npm:>=0.1900.0 < 0.2000.0":
+  version: 0.1901.3
+  resolution: "@angular-devkit/architect@npm:0.1901.3"
+  dependencies:
+    "@angular-devkit/core": "npm:19.1.3"
+    rxjs: "npm:7.8.1"
+  checksum: 10c0/e8ac2baab9a60ff7a489b348e5b90a2c14532405886cc4b8ab22d4e07719961838debbfe3ac5b2176e2a1a57ea9aed924a4f1368d1dcf6250bad26c35310561c
   languageName: node
   linkType: hard
 
@@ -206,7 +216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:18.2.12, @angular-devkit/core@npm:>= 18.0.0 < 19.0.0, @angular-devkit/core@npm:^18.0.0":
+"@angular-devkit/core@npm:18.2.12, @angular-devkit/core@npm:>= 18.0.0 < 19.0.0":
   version: 18.2.12
   resolution: "@angular-devkit/core@npm:18.2.12"
   dependencies:
@@ -227,6 +237,25 @@ __metadata:
     chokidar:
       optional: true
   checksum: 10c0/776d050ac1961bf4428b5aecd695376bff505fcc3fd3049516db4f46f02d64837f9b54f4c1b1ffa5d7450c7cf61ed2d8d2c52d0e50c63ec37423c13d49844201
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/core@npm:19.1.3, @angular-devkit/core@npm:^19.0.0":
+  version: 19.1.3
+  resolution: "@angular-devkit/core@npm:19.1.3"
+  dependencies:
+    ajv: "npm:8.17.1"
+    ajv-formats: "npm:3.0.1"
+    jsonc-parser: "npm:3.3.1"
+    picomatch: "npm:4.0.2"
+    rxjs: "npm:7.8.1"
+    source-map: "npm:0.7.4"
+  peerDependencies:
+    chokidar: ^4.0.0
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 10c0/9bb5b8f36aac9cc9236858a35ec4a5880f41cebf59b8b6d5c71b3ff1357dd2db5c71745b003f2544ab938bfb5d03a3d16ef38aaa86c15a70036963db19d5a3b7
   languageName: node
   linkType: hard
 
@@ -11288,7 +11317,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gravitee-apim-portal-webui-next@workspace:."
   dependencies:
-    "@angular-builders/jest": "npm:18.0.0"
+    "@angular-builders/jest": "npm:19.0.0"
     "@angular-devkit/build-angular": "npm:18.2.12"
     "@angular-eslint/builder": "npm:18.4.3"
     "@angular-eslint/eslint-plugin": "npm:18.4.3"
@@ -11360,7 +11389,7 @@ __metadata:
     swagger-ui: "npm:5.17.9"
     tslib: "npm:2.3.0"
     typescript: "npm:5.5.4"
-    xng-breadcrumb: "npm:11.0.0"
+    xng-breadcrumb: "npm:12.0.0"
     zone.js: "npm:0.14.10"
   languageName: unknown
   linkType: soft
@@ -12846,9 +12875,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-preset-angular@npm:14.1.0":
-  version: 14.1.0
-  resolution: "jest-preset-angular@npm:14.1.0"
+"jest-preset-angular@npm:14.4.2":
+  version: 14.4.2
+  resolution: "jest-preset-angular@npm:14.4.2"
   dependencies:
     bs-logger: "npm:^0.2.6"
     esbuild: "npm:>=0.15.13"
@@ -12858,16 +12887,15 @@ __metadata:
     pretty-format: "npm:^29.0.0"
     ts-jest: "npm:^29.0.0"
   peerDependencies:
-    "@angular-devkit/build-angular": ">=15.0.0 <19.0.0"
-    "@angular/compiler-cli": ">=15.0.0 <19.0.0"
-    "@angular/core": ">=15.0.0 <19.0.0"
-    "@angular/platform-browser-dynamic": ">=15.0.0 <19.0.0"
+    "@angular/compiler-cli": ">=15.0.0 <20.0.0"
+    "@angular/core": ">=15.0.0 <20.0.0"
+    "@angular/platform-browser-dynamic": ">=15.0.0 <20.0.0"
     jest: ^29.0.0
     typescript: ">=4.8"
   dependenciesMeta:
     esbuild:
       optional: true
-  checksum: 10c0/6ba09183191dd26ce8d78e6e2361cc3d739c4449a5abea0593d6ea1e2dd7dc9e498e2a17722be29b61ffc729d71f596805ff85be0b52c53c04cfd29ad23033ba
+  checksum: 10c0/f8447be640beff7a20d00d49a5afab3066568d0b12de8ae2d0c8e266ff1dd5b4b2bf1bed08bce2b178415a28d7b90f31702b36ff28fbf19e34b1d791cb235c97
   languageName: node
   linkType: hard
 
@@ -20051,17 +20079,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xng-breadcrumb@npm:11.0.0":
-  version: 11.0.0
-  resolution: "xng-breadcrumb@npm:11.0.0"
+"xng-breadcrumb@npm:12.0.0":
+  version: 12.0.0
+  resolution: "xng-breadcrumb@npm:12.0.0"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/common": ^17.2.0
-    "@angular/core": ^17.2.0
-    "@angular/router": ^17.2.0
+    "@angular/common": ^18.1.4
+    "@angular/core": ^18.1.4
+    "@angular/router": ^18.1.4
     rxjs: "*"
-  checksum: 10c0/43ca763b99cba8a690ad43f4fbdca8f46a13cd52d423ad79e43cd63192a1b35fd66222cb1e5d45141e1518f39d72bf4287b8ff16bcb09bb91d0a262d19317727
+  checksum: 10c0/be9f2fe6a8b17778836b6261cdba3662b4dee4766b6041b2d0e175d1bb79751b8e9724c0a98945e94eb569ca08cb5be0978cc643bfe24df6adfdf529244b6fb9
   languageName: node
   linkType: hard
 
