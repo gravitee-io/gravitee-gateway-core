@@ -17,7 +17,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 import { Component, computed, DestroyRef, inject, Input, OnInit, Signal, signal, WritableSignal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButton, MatIconButton } from '@angular/material/button';
-import { MatChip, MatChipRow } from '@angular/material/chips';
+import { MatChip } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
@@ -42,7 +42,6 @@ import { of } from 'rxjs/internal/observable/of';
 import { LoaderComponent } from '../../../../../components/loader/loader.component';
 import { Application } from '../../../../../entities/application/application';
 import { LogsResponse, LogsResponseMetadataApi, LogsResponseMetadataTotalData } from '../../../../../entities/log/log';
-import { CapitalizeFirstPipe } from '../../../../../pipe/capitalize-first.pipe';
 import { ApplicationLogService, HttpMethodVM } from '../../../../../services/application-log.service';
 import { SubscriptionService } from '../../../../../services/subscription.service';
 import { ApplicationTabLogsService, HttpStatusVM, PeriodVM, ResponseTimeVM } from '../application-tab-logs.service';
@@ -82,7 +81,6 @@ interface FiltersVM {
   imports: [
     AsyncPipe,
     LoaderComponent,
-    CapitalizeFirstPipe,
     MatCell,
     MatCellDef,
     MatColumnDef,
@@ -101,7 +99,6 @@ interface FiltersVM {
     MatSelect,
     MatOption,
     MatLabel,
-    MatChipRow,
     MatChip,
     RouterLink,
   ],
