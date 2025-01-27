@@ -15,7 +15,6 @@
  */
 import { Component, Input, input, InputSignal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 import { isEmpty } from 'lodash';
 
 import { NavBarButtonComponent } from './nav-bar-button/nav-bar-button.component';
@@ -26,8 +25,7 @@ import { UserAvatarComponent } from '../user-avatar/user-avatar.component';
 
 @Component({
   selector: 'app-nav-bar',
-  standalone: true,
-  imports: [MatButtonModule, CompanyTitleComponent, RouterLink, NavBarButtonComponent, UserAvatarComponent],
+  imports: [MatButtonModule, CompanyTitleComponent, NavBarButtonComponent, UserAvatarComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })

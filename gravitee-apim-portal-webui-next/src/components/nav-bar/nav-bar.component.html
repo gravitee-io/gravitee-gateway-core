@@ -18,10 +18,10 @@
 <div class="nav-bar__container">
   <app-company-title [title]="siteTitle" [logo]="logo()" />
   <div class="menu-items">
-    <app-nav-bar-button i18n="@@catalog" [path]="['catalog']">Catalog</app-nav-bar-button>
-    <app-nav-bar-button i18n="@@guides" [path]="['guides']">Guides</app-nav-bar-button>
+    <app-nav-bar-button [path]="['catalog']">Catalog</app-nav-bar-button>
+    <app-nav-bar-button [path]="['guides']">Guides</app-nav-bar-button>
     @if (!isEmpty(currentUser())) {
-      <app-nav-bar-button i18n="@@applications" [path]="['applications']">Applications</app-nav-bar-button>
+      <app-nav-bar-button [path]="['applications']">Applications</app-nav-bar-button>
     }
     @for (link of customLinks(); track link.id) {
       <a
@@ -41,7 +41,7 @@
     </div>
   } @else {
     <div class="unauthenticated-actions">
-      <app-nav-bar-button i18n="@@logIn" [path]="['log-in']">Log in</app-nav-bar-button>
+      <app-nav-bar-button [path]="['log-in']">Log in</app-nav-bar-button>
     </div>
   }
 </div>

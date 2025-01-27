@@ -59,7 +59,6 @@ export interface ApiPaginatorVM {
 
 @Component({
   selector: 'app-catalog',
-  standalone: true,
   imports: [
     BannerComponent,
     MatCard,

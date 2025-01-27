@@ -33,14 +33,9 @@ export class CurrentUserService {
     private http: HttpClient,
     private configuration: ConfigService,
   ) {
-    effect(
-      () => {
-        this.isUserAuthenticated.set(!isEmpty(this.user()));
-      },
-      {
-        allowSignalWrites: true,
-      },
-    );
+    effect(() => {
+      this.isUserAuthenticated.set(!isEmpty(this.user()));
+    });
   }
 
   public isAuthenticated(): boolean {

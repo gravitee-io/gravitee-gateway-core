@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Component, effect, input, OnInit, output } from '@angular/core';
+import { Component, DestroyRef, effect, inject, input, OnInit, output } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,7 +24,6 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-search-bar',
-  standalone: true,
   imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, FormsModule, MatIconModule, MatButtonModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
@@ -33,6 +33,8 @@ export class SearchBarComponent implements OnInit {
   searchTerm = output<string>();
   searchControl: FormControl<string> = new FormControl<string>(``, { nonNullable: true });
 
+  private destroyRef = inject(DestroyRef);
+
   constructor() {
     effect(() => {
       this.searchControl.setValue(this.searchParam());
@@ -40,7 +42,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchControl.valueChanges.pipe(debounceTime(300), distinctUntilChanged()).subscribe(term => {
+    this.searchControl.valueChanges.pipe(debounceTime(300), distinctUntilChanged(), takeUntilDestroyed(this.destroyRef)).subscribe(term => {
       this.searchTerm.emit(term);
     });
   }

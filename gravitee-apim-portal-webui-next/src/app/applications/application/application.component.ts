@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AsyncPipe } from '@angular/common';
 import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { MatButton } from '@angular/material/button';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { MatTabLink, MatTabNav, MatTabNavPanel } from '@angular/material/tabs';
@@ -30,13 +28,10 @@ import { CurrentUserService } from '../../../services/current-user.service';
 
 @Component({
   selector: 'app-application',
-  standalone: true,
   imports: [
     BreadcrumbNavigationComponent,
     RouterOutlet,
-    AsyncPipe,
     BannerComponent,
-    MatButton,
     MatCard,
     MatCardContent,
     MatIcon,

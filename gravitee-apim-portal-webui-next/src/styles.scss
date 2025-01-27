@@ -23,16 +23,21 @@
 @use '@angular/material-experimental' as matx;
 @use './scss/theme';
 
-@include mat.core();
-@include matx.color-variants-back-compat(theme.$light-theme);
+@include mat.elevation-classes();
+@include mat.app-background();
+@include mat.color-variants-backwards-compatibility(theme.$light-theme);
 
 html {
   @include mat.all-component-themes(theme.$light-theme);
 
-  --mat-app-background-color: #{theme.$background-color};
+  // & {
+  //  --mat-app-background-color: #{theme.$background-color};
+  // }
 }
 
 body {
+  --mat-app-background-color: #{theme.$background-color};
+
   margin: 0;
   background-color: theme.$background-color;
   font-family: theme.$font-family;
