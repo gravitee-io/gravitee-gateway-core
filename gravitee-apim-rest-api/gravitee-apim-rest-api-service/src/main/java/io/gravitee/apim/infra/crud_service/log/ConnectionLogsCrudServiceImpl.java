@@ -32,6 +32,7 @@ import io.gravitee.rest.api.model.v4.log.connection.ConnectionLogDetail;
 import io.gravitee.rest.api.service.common.ExecutionContext;
 import io.gravitee.rest.api.service.exceptions.TechnicalManagementException;
 import java.util.Optional;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -79,6 +80,36 @@ class ConnectionLogsCrudServiceImpl implements ConnectionLogsCrudService {
         } catch (AnalyticsException e) {
             log.error("An error occurs while trying to search connection logs of api [apiId={}]", apiId, e);
             throw new TechnicalManagementException("Error while searching connection logs of api " + apiId, e);
+        }
+    }
+
+    @Override
+    public SearchLogsResponse<BaseConnectionLog> searchApplicationConnectionLogs(ExecutionContext executionContext, String applicationId, SearchLogsFilters logsFilters, Pageable pageable) {
+        try {
+            var response = logRepository.searchCombinedConnectionLogs(
+                    new QueryContext(executionContext.getOrganizationId(), executionContext.getEnvironmentId()),
+                    ConnectionLogQuery
+                            .builder()
+                            .filter(
+                                    ConnectionLogQuery.Filter
+                                            .builder()
+                                            .from(logsFilters.from())
+                                            .to(logsFilters.to())
+                                            .applicationIds(Set.of(applicationId))
+                                            .planIds(logsFilters.planIds())
+                                            .methods(logsFilters.methods())
+                                            .statuses(logsFilters.statuses())
+                                            .entrypointIds(logsFilters.entrypointIds())
+                                            .build()
+                            )
+                            .page(pageable.getPageNumber())
+                            .size(pageable.getPageSize())
+                            .build()
+            );
+            return mapToConnectionResponse(response);
+        } catch (AnalyticsException e) {
+            log.error("An error occurs while trying to search connection logs of application [applicationId={}]", applicationId, e);
+            throw new TechnicalManagementException("Error while searching connection logs of application " + applicationId, e);
         }
     }
 

@@ -84,6 +84,11 @@ public class ConnectionLogsCrudServiceInMemory implements ConnectionLogsCrudServ
     }
 
     @Override
+    public SearchLogsResponse<BaseConnectionLog> searchApplicationConnectionLogs(ExecutionContext executionContext, String applicationId, SearchLogsFilters logsFilters, Pageable pageable) {
+        return null;
+    }
+
+    @Override
     public Optional<ConnectionLogDetail> searchApiConnectionLog(ExecutionContext executionContext, String apiId, String requestId) {
         Predicate<ConnectionLogDetail> predicate = connectionLog -> true;
         if (null != apiId && !apiId.isEmpty()) {
