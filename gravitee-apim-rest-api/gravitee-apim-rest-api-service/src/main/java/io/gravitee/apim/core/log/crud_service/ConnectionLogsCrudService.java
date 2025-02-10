@@ -30,5 +30,11 @@ public interface ConnectionLogsCrudService {
         SearchLogsFilters logsFilters,
         Pageable pageable
     );
+    SearchLogsResponse<BaseConnectionLog> searchApplicationConnectionLogs(
+        ExecutionContext executionContext,
+        String applicationId,
+        SearchLogsFilters logsFilters,
+        Pageable pageable
+    );
     Optional<ConnectionLogDetail> searchApiConnectionLog(ExecutionContext executionContext, String apiId, String requestId);
 }

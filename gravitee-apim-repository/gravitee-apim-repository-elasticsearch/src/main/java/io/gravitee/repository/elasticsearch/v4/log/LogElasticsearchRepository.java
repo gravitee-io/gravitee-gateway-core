@@ -18,6 +18,7 @@ package io.gravitee.repository.elasticsearch.v4.log;
 import io.gravitee.elasticsearch.model.SearchHits;
 import io.gravitee.elasticsearch.model.TotalHits;
 import io.gravitee.elasticsearch.utils.Type;
+import io.gravitee.repository.analytics.AnalyticsException;
 import io.gravitee.repository.common.query.QueryContext;
 import io.gravitee.repository.elasticsearch.AbstractElasticsearchRepository;
 import io.gravitee.repository.elasticsearch.configuration.RepositoryConfiguration;
@@ -131,5 +132,18 @@ public class LogElasticsearchRepository extends AbstractElasticsearchRepository 
                 }
             )
             .blockingGet();
+    }
+
+    @Override
+    public LogResponse<ConnectionLog> searchCombinedConnectionLogs(QueryContext queryContext, ConnectionLogQuery query) {
+        var clusters = ClusterUtils.extractClusterIndexPrefixes(configuration);
+        var indexV4Metrics = this.indexNameGenerator.getWildcardIndexName(queryContext.placeholder(), Type.V4_METRICS, clusters);
+        var indexV2Request = this.indexNameGenerator.getWildcardIndexName(queryContext.placeholder(), Type.REQUEST, clusters);
+
+        var indexes = new StringBuilder().append(indexV4Metrics).append(",").append(indexV2Request);
+
+        return this.client.search(indexes.toString(), null, SearchConnectionLogQueryAdapter.adapt(query))
+                .map(SearchConnectionLogResponseAdapter::adapt)
+                .blockingGet();
     }
 }

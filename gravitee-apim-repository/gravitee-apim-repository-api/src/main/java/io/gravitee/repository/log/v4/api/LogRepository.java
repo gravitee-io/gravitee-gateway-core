@@ -32,4 +32,5 @@ public interface LogRepository {
         throws AnalyticsException;
     LogResponse<AggregatedMessageLog> searchAggregatedMessageLog(QueryContext queryContext, MessageLogQuery query)
         throws AnalyticsException;
+    LogResponse<ConnectionLog> searchCombinedConnectionLogs(QueryContext queryContext, ConnectionLogQuery query) throws AnalyticsException;
 }
